@@ -6,6 +6,7 @@ using UnityEngine.SceneManagement;
 
 public class restart : MonoBehaviour
 {
+    public GameObject SetVolume;
     public void RestartLevel()
     {
         SceneManager.LoadScene("level 1");
@@ -21,5 +22,13 @@ public class restart : MonoBehaviour
    public void ChangeMod()
     {
         SceneManager.LoadScene("ChangeS");
+    }
+    public void ExitVolume()
+    {
+        SetVolume.SetActive(false);
+    }
+    public void Volume()
+    {
+        SetVolume.SetActive(true);
     }
 }

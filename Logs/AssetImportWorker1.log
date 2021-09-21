@@ -15,11 +15,11 @@ C:/Users/user/New Unity Project (2)/New Unity Project
 -logFile
 Logs/AssetImportWorker1.log
 -srvPort
-52045
+52530
 Successfully changed project path to: C:/Users/user/New Unity Project (2)/New Unity Project
 C:/Users/user/New Unity Project (2)/New Unity Project
 Using Asset Import Pipeline V2.
-Refreshing native plugins compatible for Editor in 78.87 ms, found 2 plugins.
+Refreshing native plugins compatible for Editor in 86.33 ms, found 2 plugins.
 Preloading 0 native plugins for Editor in 0.00 ms.
 Initialize engine version: 2020.3.10f1 (297d780c91bc)
 [Subsystems] Discovering subsystems at path C:/Program Files/Unity/Hub/Editor/2020.3.10f1/Editor/Data/Resources/UnitySubsystems
@@ -58,5 +58,5 @@ Initialize mono
 Mono path[0] = 'C:/Program Files/Unity/Hub/Editor/2020.3.10f1/Editor/Data/Managed'
 Mono path[1] = 'C:/Program Files/Unity/Hub/Editor/2020.3.10f1/Editor/Data/MonoBleedingEdge/lib/mono/unityjit'
 Mono config path = 'C:/Program Files/Unity/Hub/Editor/2020.3.10f1/Editor/Data/MonoBleedingEdge/etc'
-Using monoOptions --debugger-agent=transport=dt_socket,embedding=1,server=y,suspend=n,address=127.0.0.1:56928
+Using monoOptions --debugger-agent=transport=dt_socket,embedding=1,server=y,suspend=n,address=127.0.0.1:56548
 Begin MonoManager ReloadAssembly

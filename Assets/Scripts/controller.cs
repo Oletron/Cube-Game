@@ -10,7 +10,7 @@ public class controller : MonoBehaviour
 {
     private UnityEngine.Object explosion;
     private bool checkColl = true;
-    private float force;
+    public float force;
     public Rigidbody rb;
     void Start()
     {
@@ -20,10 +20,10 @@ public class controller : MonoBehaviour
     {
       
         //if (Input.acceleration.x >0 )
-        if (Input.GetKeyDown(KeyCode.RightArrow))
+        if (Input.GetKeyDown(KeyCode.RightArrow)&checkColl)
             rb.velocity = new Vector3(10, 0, 0);
         //if (Input.acceleration.x<0)
-        if (Input.GetKeyDown(KeyCode.LeftArrow))
+        if (Input.GetKeyDown(KeyCode.LeftArrow) & checkColl)
             rb.velocity = new Vector3(-10, 0, 0);
 
         //if (Input.touchCount > 0)

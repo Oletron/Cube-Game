@@ -6,24 +6,24 @@ EditorBuildSettings:
   serializedVersion: 2
   m_Scenes:
   - enabled: 1
-    path: Assets/start.unity
+    path: Assets/Scenes/start.unity
     guid: cdc966a34ec7243498b935955c5aedfa
   - enabled: 1
-    path: Assets/ChangeSkin.unity
+    path: Assets/Scenes/ChangeSkin.unity
     guid: ad95c0af5e5f3c84eada23bd10ad0c47
   - enabled: 1
-    path: Assets/ChangeS.unity
+    path: Assets/Scenes/ChangeS.unity
     guid: 7f08a8231a98c2748a31eff2d8b5970f
   - enabled: 0
-    path: Assets/nightMode.unity
+    path: Assets/Scenes/nightMode.unity
     guid: 2b2e4d009430e984f940abf522676fcf
   - enabled: 1
-    path: Assets/level 1.unity
+    path: Assets/Scenes/level 1.unity
     guid: 32ef7438f7384e34a898e5e422edf422
   - enabled: 1
-    path: Assets/complete.unity
+    path: Assets/Scenes/complete.unity
     guid: d488b3499b6e6624cbbb9f8ac50b3206
   - enabled: 1
-    path: Assets/failed.unity
+    path: Assets/Scenes/failed.unity
     guid: 1e6fcd4bc1096da488a836873fb97c63
   m_configObjects: {}

@@ -14,19 +14,23 @@ public class NewBehaviourScript : MonoBehaviour
     public Rigidbody rb;
     public Text text;
     public GameObject failed;
+    public GameObject Volume;
     public GameObject complete;
     public GameObject effect;
     public GameObject failedSound;
     public GameObject[] music;
-    private string enemy = "let";
     public float speed1 = 12f;
     private float score;
     public int rand;
+    private AudioSource audioSrc;
     private bool game_is_paused = false;
     void Start()
     {
         rand = UnityEngine.Random.Range(0, music.Length);
         music[rand].SetActive(true);
+        Volume = music[rand];
+        audioSrc = Volume.GetComponent<AudioSource>();
+        audioSrc.volume = PlayerPrefs.GetFloat("volume");
         resume();
     }
     void Update()
