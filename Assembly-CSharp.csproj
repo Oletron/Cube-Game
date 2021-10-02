@@ -81,10 +81,11 @@
      <Compile Include="Assets\Photon Unity Networking\Plugins\PhotonNetwork\PhotonClasses.cs" />
      <Compile Include="Assets\Photon Unity Networking\Demos\DemoChat\NamePickGui.cs" />
      <Compile Include="Assets\Photon Unity Networking\Plugins\PhotonNetwork\LoadbalancingPeer.cs" />
-     <Compile Include="Assets\Scripts\NewBehaviourScript.cs" />
+     <Compile Include="Assets\Scripts\manager.cs" />
      <Compile Include="Assets\PhotonChatApi\ChatParameterCode.cs" />
      <Compile Include="Assets\Photon Unity Networking\Demos\DemoChangeOwner\InstantiateCube.cs" />
      <Compile Include="Assets\Photon Unity Networking\Plugins\PhotonNetwork\Views\PhotonTransformViewPositionControl.cs" />
+     <Compile Include="Assets\Scripts\timer.cs" />
      <Compile Include="Assets\Photon Unity Networking\UtilityScripts\ShowStatusWhenConnecting.cs" />
      <Compile Include="Assets\Photon Unity Networking\Demos\DemoRPGMovement\Scripts\RPGMovement.cs" />
      <Compile Include="Assets\Photon Unity Networking\UtilityScripts\ConnectAndJoinRandom.cs" />
@@ -129,7 +130,6 @@
      <Compile Include="Assets\Photon Unity Networking\Demos\DemoChat\IgnoreUiRaycastWhenInactive.cs" />
      <Compile Include="Assets\Photon Unity Networking\UtilityScripts\PointedAtGameObjectInfo.cs" />
      <Compile Include="Assets\Photon Unity Networking\UtilityScripts\OnClickDestroy.cs" />
-     <Compile Include="Assets\MeshCombiner\Scripts\MeshCombiner.cs" />
      <Compile Include="Assets\Photon Unity Networking\Demos\MarcoPolo-Tutorial\Monstergame\Resources\Scripts\myThirdPersonController.cs" />
      <Compile Include="Assets\Photon Unity Networking\Plugins\PhotonNetwork\GizmoType.cs" />
      <Compile Include="Assets\Photon Unity Networking\Plugins\PhotonNetwork\Room.cs" />
@@ -140,6 +140,7 @@
      <Compile Include="Assets\Scripts\quit.cs" />
      <Compile Include="Assets\Photon Unity Networking\Demos\DemoFriendsAndCustomAuth\GUIFriendFinding.cs" />
      <Compile Include="Assets\Photon Unity Networking\Demos\DemoSynchronization\CubeInter.cs" />
+     <Compile Include="Assets\Scripts\pauseManager.cs" />
      <Compile Include="Assets\Scripts\ScoreController.cs" />
      <Compile Include="Assets\Photon Unity Networking\Demos\DemoHub\Scripts\ToDemoHubButton.cs" />
      <Compile Include="Assets\Photon Unity Networking\Demos\Shared Assets\Scripts\PlayerVariables.cs" />
@@ -201,6 +202,7 @@
      <Compile Include="Assets\Photon Unity Networking\Demos\DemoWorker\Scripts\Game\Player\ThirdPersonCamera.cs" />
      <Compile Include="Assets\Scripts\playerManager.cs" />
      <Compile Include="Assets\Photon Unity Networking\UtilityScripts\OnStartDelete.cs" />
+     <Compile Include="Assets\Scripts\volume.cs" />
      <Compile Include="Assets\Scripts\levelGenerator.cs" />
      <Compile Include="Assets\Photon Unity Networking\Demos\PunBasics-Tutorial\Scripts\CameraWork.cs" />
      <Compile Include="Assets\Photon Unity Networking\Demos\Demo2DJumpAndRunWithPhysics\Scripts\Demo2DJumpAndRun.cs" />
