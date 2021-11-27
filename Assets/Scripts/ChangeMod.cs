@@ -1,41 +1,25 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-
-public class ChangeMod : MonoBehaviour
+using Photon.Pun;
+using UnityEngine.SceneManagement;
+public class ChangeMod : MonoBehaviourPunCallbacks
 {
-    public GameObject tick1;
-    public GameObject tick2;
-    public int NumberMode;
-    // Start is called before the first frame update
-    void Start()
+    public void Online()
     {
-        NumberMode = PlayerPrefs.GetInt("mode");
+        PhotonNetwork.ConnectUsingSettings();
     }
-
-    // Update is called once per frame
-    void Update()
+    public override void OnConnectedToMaster()
     {
-        if (NumberMode == 1)
-        {
-            tick1.SetActive(true);
-            tick2.SetActive(false);
-        }
-        if (NumberMode == 2)
-        {
-            tick1.SetActive(false);
-            tick2.SetActive(true);
-        }
+        PhotonNetwork.JoinRandomRoom();
     }
-    public void mode1()
+    public override void OnJoinRandomFailed(short returnCode, string message)
     {
-        NumberMode = 1;
-        PlayerPrefs.SetInt("mode", NumberMode);
+        print(returnCode+""+ message);
     }
-    public void mode2()
+    public override void OnJoinedRoom()
     {
-        NumberMode = 2;
-        PlayerPrefs.SetInt("mode", NumberMode);
+        SceneManager.LoadScene("Game");
     }
 }
 

@@ -7,10 +7,7 @@ public class levelGenerator : MonoBehaviour
 {
     public int numberlevel;
     public GameObject[] Prefabs;
-    public GameObject FirstL;
     public Transform Points;
-    private int score1;
-    private int score2;
     private GameObject pref;
 
     void Start()

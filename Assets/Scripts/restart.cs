@@ -7,9 +7,17 @@ using UnityEngine.SceneManagement;
 public class restart : MonoBehaviour
 {
     public GameObject SetVolume;
-    public void RestartLevel()
+    public void RestartLevel1()
     {
         SceneManager.LoadScene("level 1");
+    }
+    public void ChooseMod()
+    {
+        SceneManager.LoadScene("ChooseMod");
+    }
+    public void RestartGame()
+    {
+        SceneManager.LoadScene("Game");
     }
     public void ReturnToMenu()
     {
@@ -19,9 +27,9 @@ public class restart : MonoBehaviour
     {
         SceneManager.LoadScene("ChangeSkin");
     }
-   public void ChangeMod()
+   public void Lobby()
     {
-        SceneManager.LoadScene("ChangeS");
+        SceneManager.LoadScene("loading");
     }
     public void ExitVolume()
     {

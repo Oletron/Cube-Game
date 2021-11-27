@@ -8,14 +8,14 @@ public class playerManager : MonoBehaviour
     public GameObject player;
     public Material skin1;
     public Material skin2;
-
+    public Material skin3;
+    public Material skin4;
+    public Material skin5;
     public int NumberSkin;
-    public int NumberMode;
     // Start is called before the first frame update
     void Start()
     {
-        NumberSkin = PlayerPrefs.GetInt("skin");
-        //NumberMode = PlayerPrefs.GetInt("mode");
+        NumberSkin = PlayerPrefs.GetInt("skinNum");
     }
 
     // Update is called once per frame
@@ -29,16 +29,17 @@ public class playerManager : MonoBehaviour
         {
             player.GetComponent<MeshRenderer>().material = skin2;
         }
-        /*
-        if (NumberMode == 1)
+        if (NumberSkin == 3)
         {
-            SceneManager.LoadScene("nightMode");
+            player.GetComponent<MeshRenderer>().material = skin3;
         }
-        
-        if (NumberMode == 2)
+        if (NumberSkin == 4)
         {
-            SceneManager.LoadScene("level1");
+            player.GetComponent<MeshRenderer>().material = skin4;
         }
-        */
+        if (NumberSkin == 5)
+        {
+            player.GetComponent<MeshRenderer>().material = skin5;
+        }
     }
 }
