@@ -26,9 +26,11 @@ public class manager : MonoBehaviour
     private int maxSpeed = 25;
     private int money;
     PhotonView view;
+    Rigidbody rb;
     void Start()
     {
         view = GetComponent<PhotonView>();
+        rb = GetComponent<Rigidbody>();
         Time.timeScale = 1;
         //это все музыка
         if (NotPause)
@@ -77,7 +79,7 @@ public class manager : MonoBehaviour
     void going()
     {
         //собственно передвижение
-        obj.transform.Translate(Vector3.forward * speed1 * Time.deltaTime);
+        rb.velocity = new Vector3(rb.velocity.x, rb.velocity.y, speed1);
     }
     private IEnumerator CoroutinePause()
     { //события при врезании

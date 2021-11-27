@@ -24,14 +24,14 @@ public class controller : MonoBehaviour
         {
             if (NotPause)
             {
-                
+                /*
                 Vector3 acceleration = Input.acceleration;
                 rb.velocity = new Vector3(acceleration.x*15, 0, 0);
                 if (Input.touchCount > 0)
                 {
                 jump();
                 }
-                /*
+                */
                 
                 if (Input.GetKeyDown(KeyCode.RightArrow) & checkColl)
                     rb.velocity = new Vector3(10, rb.velocity.y, 0);
@@ -41,7 +41,7 @@ public class controller : MonoBehaviour
                 {
                     jump();
                 }
-                */
+                
                 
             }
         }
