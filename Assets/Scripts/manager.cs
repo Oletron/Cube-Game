@@ -13,6 +13,7 @@ public class manager : MonoBehaviour
     public GameObject obj;
     public Text ScoreText;
     public GameObject failed;
+    public GameObject complete;
     private GameObject Volume;
     public GameObject effect;
     public GameObject failedSound;
@@ -21,6 +22,7 @@ public class manager : MonoBehaviour
     public GameObject pauseMenu;
     public controller script2;
     public float speed1 = 12f;
+    public GameObject confeti;
     private float score;
     private int rand;
     private int maxSpeed = 25;
@@ -71,8 +73,12 @@ public class manager : MonoBehaviour
         {
             if (other.tag == "money")
             {
-            money++;
-            Destroy(other.gameObject);
+             money++;
+             Destroy(other.gameObject);
+            }
+            if (other.tag == "win")
+            {
+                StartCoroutine(win());
             }
         }
     }
@@ -95,6 +101,17 @@ public class manager : MonoBehaviour
         PlayerPrefs.SetInt("money", money);
         failed.SetActive(true);
         Time.timeScale  = 0;
+    }
+    private IEnumerator win()
+    {
+        confeti.SetActive(true);
+        speed1 = 0;
+        music[rand].SetActive(false);
+        yield return new WaitForSeconds(1f);
+        NotPause = false;
+        script2.NotPause = false;
+        complete.SetActive(true);
+        Time.timeScale = 0;
     }
     /*
     private IEnumerator speedIncrease()

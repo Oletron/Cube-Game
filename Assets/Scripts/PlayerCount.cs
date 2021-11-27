@@ -13,7 +13,7 @@ public class PlayerCount : MonoBehaviour
     }
     void Update()
     {
-        if (PhotonNetwork.PlayerList.Length>1)
+        if (PhotonNetwork.PlayerList.Length>0)
         {
             WaitingText.SetActive(false);
             script3.timeStart = true;
