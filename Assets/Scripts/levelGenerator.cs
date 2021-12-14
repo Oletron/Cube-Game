@@ -9,11 +9,6 @@ public class levelGenerator : MonoBehaviour
     public GameObject[] Prefabs;
     public Transform Points;
     private GameObject pref;
-
-    void Start()
-    {
-        //Destroy(FirstL, 13);
-    }
     void OnTriggerEnter(Collider col)
     {
         numberlevel = UnityEngine.Random.Range(0,Prefabs.Length);

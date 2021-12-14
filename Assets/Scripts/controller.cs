@@ -5,24 +5,18 @@ using UnityEngine;
 using UnityEngine.UI;
 using UnityEngine.SceneManagement;
 using System.Diagnostics;
-using Photon.Pun;
 public class controller : MonoBehaviour
 {
-    PhotonView view;
     private bool checkColl=false;
     public float force;
     public Rigidbody rb;
-    public bool NotPause;
     void Start()
     {
-        view = GetComponent<PhotonView>();
         rb = GetComponent<Rigidbody>();
     }
     void Update()
     {
-        if (view.IsMine)
-        {
-            if (NotPause)
+            if (timer.NotPause)
             {
                 /*
                 Vector3 acceleration = Input.acceleration;
@@ -32,7 +26,6 @@ public class controller : MonoBehaviour
                 jump();
                 }
                 */
-                
                 if (Input.GetKeyDown(KeyCode.RightArrow) & checkColl)
                     rb.velocity = new Vector3(10, rb.velocity.y, 0);
                 if (Input.GetKeyDown(KeyCode.LeftArrow) & checkColl)
@@ -41,9 +34,6 @@ public class controller : MonoBehaviour
                 {
                     jump();
                 }
-                
-                
-            }
         }
     }
     void OnCollisionEnter(Collision other)

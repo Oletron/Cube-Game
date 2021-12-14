@@ -432,7 +432,6 @@ MonoBehaviour:
   numberlevel: 0
   Prefabs:
   - {fileID: 0}
-  FirstL: {fileID: 3666255399695259248}
   Points: {fileID: 0}
 --- !u!1 &3666255401317823347
 GameObject:

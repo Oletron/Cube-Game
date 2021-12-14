@@ -7,7 +7,6 @@ using UnityEngine.SceneManagement;
 using System.Diagnostics;
 using System.Security.Cryptography;
 using System;
-using Photon.Pun;
 public class manager : MonoBehaviour
 {
     public GameObject obj;
@@ -18,111 +17,72 @@ public class manager : MonoBehaviour
     public GameObject effect;
     public GameObject failedSound;
     public GameObject[] music;
-    public bool NotPause;
     public GameObject pauseMenu;
-    public controller script2;
-    public float speed1 = 12f;
     public GameObject confeti;
     private float score;
     private int rand;
     private int maxSpeed = 25;
-    private int money;
-    PhotonView view;
-    Rigidbody rb;
+    public int money;
+
     void Start()
     {
-        view = GetComponent<PhotonView>();
-        rb = GetComponent<Rigidbody>();
         Time.timeScale = 1;
+        money = PlayerPrefs.GetInt("money");
         //это все музыка
-        if (NotPause)
-        {
-            rand = UnityEngine.Random.Range(0, music.Length);
-            music[rand].SetActive(true);
+        rand = UnityEngine.Random.Range(0, music.Length);
+        music[rand].SetActive(true);
             //а вот это старт ускорения
-            StartCoroutine("speedIncrease");
-            money = PlayerPrefs.GetInt("money");
-        }
+            //StartCoroutine("speedIncrease");
+        
     }
     void Update()
     { //основаная часть этого скрипта
-        if (view.IsMine)
-        {
-            if (NotPause)
+            if (timer.NotPause)
             {
-                going();
-                score = (float)System.Math.Round(Time.timeSinceLevelLoad);
+                score = (float)System.Math.Round(Time.timeSinceLevelLoad)-3;
                 ScoreText.text = "Ваш счет: " + score.ToString();
             }
-        }
-    }
-    void OnCollisionEnter(Collision other)
-    {
-        if (view.IsMine)
-        {
-            //проверка врезания во врага
-            if (other.gameObject.tag == "enemy")
-            {
-                StartCoroutine(CoroutinePause());
-            }
-        }
     }
     void OnTriggerEnter(Collider other)
     {
-        if (view.IsMine)
-        {
             if (other.tag == "money")
             {
              money++;
+             PlayerPrefs.SetInt("money", money);
              Destroy(other.gameObject);
             }
             if (other.tag == "win")
             {
                 StartCoroutine(win());
             }
+    }
+    void OnCollisionEnter(Collision other)
+    {
+        //проверка врезания во врага
+        if (other.gameObject.tag == "enemy")
+        {
+            timer.NotPause = false;
+            Instantiate(effect, transform.position, Quaternion.identity);
+            music[rand].SetActive(false);
+            failedSound.SetActive(true);
+            PlayerPrefs.SetInt("money", money);
+            Invoke("StopAll", 0.7f);
         }
     }
-    void going()
-    {
-        //собственно передвижение
-        rb.velocity = new Vector3(rb.velocity.x, rb.velocity.y, speed1);
-    }
-    private IEnumerator CoroutinePause()
+    private void StopAll()
     { //события при врезании
-        Instantiate(effect, transform.position, Quaternion.identity);
-        speed1 = 0;
-        music[rand].SetActive(false);
-        failedSound.SetActive(true);
-        yield return new WaitForSeconds(0.7f);
-        NotPause = false;
-        script2.NotPause = false;
         pauseMenu.SetActive(false);
         PlayerPrefs.SetFloat("score", score);
-        PlayerPrefs.SetInt("money", money);
         failed.SetActive(true);
         Time.timeScale  = 0;
     }
     private IEnumerator win()
     {
         confeti.SetActive(true);
-        speed1 = 0;
         music[rand].SetActive(false);
         yield return new WaitForSeconds(1f);
-        NotPause = false;
-        script2.NotPause = false;
+        timer.NotPause = false;
         complete.SetActive(true);
         Time.timeScale = 0;
     }
-    /*
-    private IEnumerator speedIncrease()
-    {
-        //корутина отвечающая за ускорение
-        yield return new WaitForSeconds(10);
-        if (speed1 <= maxSpeed)
-        {
-            speed1 ++;
-            StartCoroutine("speedIncrease");
-        }
-    }
-    */
 }

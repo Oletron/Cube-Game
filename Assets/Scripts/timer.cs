@@ -6,25 +6,15 @@ public class timer : MonoBehaviour
 {
     public Text timerStart;
     private int timeToStart;
-    public manager script1;
-    public controller script2;
+    public static bool NotPause=false;
     public bool timeStart;
     // Start is called before the first frame update
     void Start()
     {
-        timeToStart = 5;
-        script1.NotPause = false;
-        script2.NotPause = false;
+        timeToStart = 4;
+        NotPause = false;
         timeStart = true;
-    }
-    void Update()
-    {
-        if (timeStart)
-        {
-            StartCoroutine(GameStart());
-            return;
-            
-        }
+        StartCoroutine(GameStart());
     }
     private IEnumerator GameStart()
     {
@@ -34,9 +24,9 @@ public class timer : MonoBehaviour
             timerStart.text = timeToStart.ToString();
             if (timeToStart <= 0)
             {
-                script1.NotPause = true;
-                script2.NotPause = true;
+                NotPause = true;
                 Destroy(timerStart);
+                break;
             }
             yield return new WaitForSeconds(1f);
         }

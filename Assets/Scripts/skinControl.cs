@@ -10,7 +10,6 @@ public class skinControl : MonoBehaviour
     public Button buyButton;
     public Image iLock;
     public int price;
-
     public Sprite buySkin;
     public Sprite equipped;
     public Sprite equip;
@@ -18,7 +17,7 @@ public class skinControl : MonoBehaviour
     public Sprite trueLock;
     public Text moneyText;
     public Image[] skins;
-    private int money;
+    public int money;
 
     private void Start()
     {
@@ -70,6 +69,7 @@ public class skinControl : MonoBehaviour
                 iLock.GetComponent<Image>().sprite = trueLock;
                 buyButton.GetComponent<Image>().sprite = equipped;
                 PlayerPrefs.SetInt("money",money-price);
+                print(money);
                 moneyText.text = "Money:" + money.ToString();
                 PlayerPrefs.SetInt(GetComponent<Image>().name + "buy", 1);
                 PlayerPrefs.SetInt("skinNum", skinNum);

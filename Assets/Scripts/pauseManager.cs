@@ -14,22 +14,19 @@ public class pauseManager : MonoBehaviour
     public GameObject pauseMenu;
     void Start()
     {
-        script1.NotPause = false;
-        script2.NotPause = false;
+        timer.NotPause = false;
     }
     public void pause()
     {
         pauseMenu.SetActive(true);
-        script1.NotPause = false;
-        script2.NotPause = false;
+        timer.NotPause = false;
         game_is_paused = true;
         im.sprite = pic1;
     }
     void resume()
     {
         pauseMenu.SetActive(false);
-        script1.NotPause = true;
-        script2.NotPause = true;
+        timer.NotPause = true;
         game_is_paused = false;
         im.sprite = pic2;
     }
